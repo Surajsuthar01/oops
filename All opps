@@ -1,0 +1,408 @@
+#include<iostream>
+using namespace std;
+
+class empolyee{
+    public:
+    string name;
+    string company;
+    string controy;
+    int age;
+    void introduceyourself(){
+        cout<<"my name is "<<name<<endl;
+        cout<<"my age is "<<age<<endl;
+        cout<<"i'm lived in "<<controy<<endl;
+        cout<<"i'm working for the "<<company<<endl;
+        cout<<endl;
+    }
+   
+};
+int main(){
+    
+    empolyee empolyee1;
+    empolyee1.name="suraj suthar";
+    empolyee1.company="devsuraj.online";
+    empolyee1.age=21;
+    empolyee empolyee2;
+    empolyee2.name="shubham sharma";
+    empolyee2.company="devsuraj.online";
+    empolyee2.age=22;
+    empolyee2.controy="india";
+    empolyee1.introduceyourself();
+    empolyee2.introduceyourself();
+
+}
+
+constructor
+
+class empolyee{
+    public:
+    string Name;
+    string Company;
+    string Controy;
+    int Age;
+    void introduceyourself(){
+        cout<<"my name is "<<Name<<endl;
+        cout<<"my age is "<<Age<<endl;
+        cout<<"i'm lived in "<<Controy<<endl;
+        cout<<"i'm working for the "<<Company<<endl;
+        cout<<endl;
+    }
+
+    empolyee(string name,string company,int age){
+        Name=name;
+        Company=company;
+        Age=age;
+        
+    }
+
+};
+int main(){
+    
+    empolyee empolyee1=empolyee("suraj suthar","devsuraj.online",21);
+ 
+    empolyee empolyee2=empolyee("shubham sharma","devsuraj.online",22);
+
+    empolyee1.introduceyourself();
+    empolyee2.introduceyourself();
+}
+
+Encapsulation 
+
+class empolyee{
+    private:
+    string Name;
+    string Company;
+    string Controy;
+    int Age;
+    public:
+    void setName(string name){
+        Name =name;
+    }
+    string getName(){
+        return Name;
+    }
+    void setCompany(string company){
+        Company=company;
+    }
+    string getCompany(){
+        return Company;
+    }
+    void setAge(int age){
+        // it is make the condition if it satisfiy this then the 
+        //age is will be change other wise no change it.
+        if(age>=18)
+        Age=age;
+    }
+    int getAge(){
+        return Age;
+    }
+
+
+    void introduceyourself(){
+        cout<<"my name is "<<Name<<endl;
+        cout<<"my age is "<<Age<<endl;
+        cout<<"i'm lived in "<<Controy<<endl;
+        cout<<"i'm working for the "<<Company<<endl;
+        cout<<endl;
+    }
+
+    empolyee(string name,string company,int age){
+        Name=name;
+        Company=company;
+        Age=age;
+        
+    }
+
+};
+int main(){
+    
+    empolyee empolyee1=empolyee("suraj suthar","devsuraj.online",21);
+ 
+    empolyee empolyee2=empolyee("shubham sharma","devsuraj.online",22);
+
+    empolyee1.introduceyourself();
+    empolyee2.introduceyourself();
+    empolyee1.setName("jay");
+    cout<<"set is name "<<empolyee1.getName()<<endl;
+    empolyee1.setCompany("sslogstech.pvt");
+    cout<<"set is company is "<<empolyee1.getCompany()<<endl;
+    empolyee1.setAge(13);
+    cout<<"set age is "<<empolyee1.getAge()<<endl<<endl;
+    
+    empolyee1.introduceyourself();
+
+}
+
+Abstraction 
+
+class Abstractemployee{
+    virtual void AskforPromtion()=0;
+};
+
+class empolyee:Abstractemployee{
+    private:
+    string Name;
+    string Company;
+    string Controy;
+    int Age;
+    public:
+    void setName(string name){
+        Name =name;
+    }
+    string getName(){
+        return Name;
+    }
+    void setCompany(string company){
+        Company=company;
+    }
+    string getCompany(){
+        return Company;
+    }
+    void setAge(int age){
+        // it is make the condition if it satisfiy this then the 
+        //age is will be change other wise no change it.
+        if(age>=18)
+        Age=age;
+    }
+    int getAge(){
+        return Age;
+    }
+
+
+    void introduceyourself(){
+        cout<<"my name is "<<Name<<endl;
+        cout<<"my age is "<<Age<<endl;
+        cout<<"i'm lived in "<<Controy<<endl;
+        cout<<"i'm working for the "<<Company<<endl;
+        cout<<endl;
+    }
+
+    empolyee(string name,string company,int age){
+        Name=name;
+        Company=company;
+        Age=age;
+    }
+
+     void AskforPromtion(){
+        if (Age >=18){
+            cout<<Name<<" got promoted! "<<endl;
+        }else{
+            cout<<Name<<" , Soory No promotion for you!"<<endl;
+        }
+     }
+
+
+};
+int main(){
+    
+    empolyee empolyee1=empolyee("suraj suthar","devsuraj.online",21);
+ 
+    empolyee empolyee2=empolyee("shubham sharma","devsuraj.online",17);
+ 
+    empolyee1.AskforPromtion();
+    empolyee2.AskforPromtion();
+}
+
+inheritance 
+
+class Abstractemployee{
+    virtual void AskforPromtion()=0;
+};
+
+class empolyee:Abstractemployee{
+    private:
+  
+    string Company;
+    string Controy;
+    int Age;
+    protected:
+    string Name;
+    public:
+    void setName(string name){
+        Name =name;
+    }
+    string getName(){
+        return Name;
+    }
+    void setCompany(string company){
+        Company=company;
+    }
+    string getCompany(){
+        return Company;
+    }
+    void setAge(int age){
+        // it is make the condition if it satisfiy this then the 
+        //age is will be change other wise no change it.
+        if(age>=18)
+        Age=age;
+    }
+    int getAge(){
+        return Age;
+    }
+
+
+    void introduceyourself(){
+        cout<<"my name is "<<Name<<endl;
+        cout<<"my age is "<<Age<<endl;
+        cout<<"i'm lived in "<<Controy<<endl;
+        cout<<"i'm working for the "<<Company<<endl;
+        cout<<endl;
+    }
+
+    empolyee(string name,string company,int age){
+        Name=name;
+        Company=company;
+        Age=age;
+    }
+
+     void AskforPromtion(){
+        if (Age >=18){
+            cout<<Name<<" got promoted! "<<endl;
+        }else{
+            cout<<Name<<" , Soory No promotion for you!"<<endl;
+        }
+     }
+
+
+};
+
+ class developer:public empolyee{
+    public: 
+    string Favprogramming;
+    developer(string name,string company,int age,string favprogramming):
+    empolyee(name,company,age){
+        Favprogramming=favprogramming;
+    }
+    void fixbug(){
+        cout<<Name<<" fixed bug using the "<<Favprogramming<<endl;
+    }
+ };
+ class teacher:public empolyee{
+    public:
+    string Subject;
+    void preparelesson(){
+        cout<<Name<<" is preparing "<<Subject<<" lesson"<<endl;
+    }
+
+    teacher(string name,string company,int age,string subject):
+    empolyee(name,company,age){
+        Subject=subject;
+    }
+ };
+
+int main(){
+    developer d=developer("suraj suthar","devsuraj.online",21,"c++");
+    // d.fixbug();
+    // d.AskforPromtion();
+    teacher t=teacher("suraj suthar" ,"devsuraj.online",21,"java");
+    t.preparelesson();
+    t.AskforPromtion();
+
+}
+
+polymorphism 
+
+class Abstractemployee{
+    virtual void AskforPromtion()=0;
+};
+
+class empolyee:Abstractemployee{
+    private:
+  
+    string Company;
+    string Controy;
+    int Age;
+    protected:
+    string Name;
+    public:
+    void setName(string name){
+        Name =name;
+    }
+    string getName(){
+        return Name;
+    }
+    void setCompany(string company){
+        Company=company;
+    }
+    string getCompany(){
+        return Company;
+    }
+    void setAge(int age){
+        // it is make the condition if it satisfiy this then the 
+        //age is will be change other wise no change it.
+        if(age>=18)
+        Age=age;
+    }
+    int getAge(){
+        return Age;
+    }
+
+    void introduceyourself(){
+        cout<<"my name is "<<Name<<endl;
+        cout<<"my age is "<<Age<<endl;
+        cout<<"i'm lived in "<<Controy<<endl;
+        cout<<"i'm working for the "<<Company<<endl;
+        cout<<endl;
+    }
+
+    empolyee(string name,string company,int age){
+        Name=name;
+        Company=company;
+        Age=age;
+    }
+
+     void AskforPromtion(){
+        if (Age >=18){
+            cout<<Name<<" got promoted! "<<endl;
+        }else{
+            cout<<Name<<" , Soory No promotion for you!"<<endl;
+        }
+     }
+    virtual void work(){
+       cout<<Name<<" is checking email, tak backlog, performing tasks..."<<endl; 
+     }
+
+
+};
+
+ class developer:public empolyee{
+    public: 
+    string Favprogramming;
+    developer(string name,string company,int age,string favprogramming):
+    empolyee(name,company,age){
+        Favprogramming=favprogramming;
+    }
+    void fixbug(){
+        cout<<Name<<" fixed bug using the "<<Favprogramming<<endl;
+    }
+    void work(){
+       cout<<Name<<" is writing "<<Favprogramming<<" code..."<<endl; 
+     }
+ };
+ class teacher:public empolyee{
+    public:
+    string Subject;
+    void preparelesson(){
+        cout<<Name<<" is preparing "<<Subject<<" lesson"<<endl;
+    }
+
+    teacher(string name,string company,int age,string subject):
+    empolyee(name,company,age){
+        Subject=subject;
+    }
+     void work(){
+       cout<<Name<<" is teaching the "<<Subject<<endl; 
+     }
+ };
+
+int main(){
+    developer d=developer("suraj suthar","devsuraj.online",21,"c++");
+
+    teacher t=teacher("shubham sharmar" ,"devsuraj.online",25,"java");
+    empolyee *e1 =&d;
+    empolyee *e2=&t;
+    e1->work();
+    e2->work();
+
+   
+}
